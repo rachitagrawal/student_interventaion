@@ -11852,14 +11852,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
 <span class="n">n_students</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># TODO: Calculate number of features</span>
-<span class="n">n_features</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">n_features</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># TODO: Calculate passing students</span>
 <span class="n">n_passed</span> <span class="o">=</span> <span class="n">student_data</span><span class="p">[</span><span class="n">student_data</span><span class="o">.</span><span class="n">passed</span><span class="o">==</span><span class="s2">&quot;yes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -11889,7 +11889,7 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Total number of students: 395
-Number of features: 31
+Number of features: 30
 Number of students who passed: 265
 Number of students who failed: 130
 Graduation rate of the class: 67.09%
@@ -12170,11 +12170,11 @@ Testing set has 95 samples.
 <li>The given problem definitely has very small training set and doesn't need analysis of feature interactions makes it solvable through this technique.</li>
 </ul>
 </li>
-<li>Ensemble Methods<ul>
-<li>Ensemble methonds have been found very appropriate to characterize computer security problems - <a href="http://www.sciencedirect.com/science/article/pii/S156625350900030X">http://www.sciencedirect.com/science/article/pii/S156625350900030X</a></li>
-<li>Because they combine multiple learning models they are unlikely to overfit. </li>
+<li>Ensemble Methods - Random Forest Classifier<ul>
+<li>Decision fusion for the classification of urban remote sensing images - <a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1704969">http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1704969</a></li>
+<li>Random Forest classifier has methods for balancing error in class population unbalanced data sets.  </li>
 <li>Ensemble methods are time consuming and they are hard to implement in real time platform. </li>
-<li>Our problem is not something that needs real time implementation and hence Ensemble methods cons doesn't affect this problem. So, it's a good technique to use. </li>
+<li>Our problem is not something that needs real time implementation and our problem being slightly unbalanced gets benefitted with this method. So, it's a good technique to use. </li>
 </ul>
 </li>
 </ol>
@@ -12549,7 +12549,9 @@ F1 score for test set: 0.8092.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Ensemble method uses multiple learning models and uses predictions from all the learning models and combine them to come up with the most voted (depends on how we combine) outcome. This way, this technique neither suffers from high bias or high variance. It uses multiple weak learners and combine them to make one smart learner.</p>
+<p><strong>Answer: </strong> Random Forest Classifier is an Ensemble method with bootstrapping technique that uses multiple learning models and uses predictions from all the learning models. Random forest fits a number of tree classifiers on various sub-samples of the data sets and use averaging to improve predictive accuracy and control over-fitting. The sub-sample size is always same as the original input sample size but the samples are drawn with replacement(bootstrapping or tree bagging).</p>
+<p>Given a training set, bagging repeatedly selects a random sample with replacement of the training set and fits tree to these samples. After training, predictions for unseen samples are made by averaging the predictions from all the individual regression trees.</p>
+<p>In addition to this, random forest classifier selects a random subset of the features at each candidate split in the learning process. This process is called "feature bagging". The features that are strong predictors gets selected in many trees.</p>
 
 </div>
 </div>
