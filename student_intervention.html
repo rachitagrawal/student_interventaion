@@ -12549,9 +12549,8 @@ F1 score for test set: 0.8092.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Random Forest Classifier is an Ensemble method with bootstrapping technique that uses multiple learning models and uses predictions from all the learning models. Random forest fits a number of tree classifiers on various sub-samples of the data sets and use averaging to improve predictive accuracy and control over-fitting. The sub-sample size is always same as the original input sample size but the samples are drawn with replacement(bootstrapping or tree bagging).</p>
-<p>Given a training set, bagging repeatedly selects a random sample with replacement of the training set and fits tree to these samples. After training, predictions for unseen samples are made by averaging the predictions from all the individual regression trees.</p>
-<p>In addition to this, random forest classifier selects a random subset of the features at each candidate split in the learning process. This process is called "feature bagging". The features that are strong predictors gets selected in many trees.</p>
+<p><strong>Answer: </strong> Random Forest Classifier is a collection of multiple Decision Tree and various sub-samples from the data set. A decision tree is a tree-like graph where each node is a decision point. Each decision point tries to find an answer to a question and takes a path based on the answer and rules out the non-possibilities. To quickly reach to the final answer, the decision points that rules out maximum possibilities are kept at the top of the tree. The decision questions are typically the features that the data has. For example: In the game of 20 questions of predicting the personality, decision points could be is the person male? If yes, it rules out all female personalities and if no, it rules out all male personalities. So, it's a good decision points which could be the root of a Decision Tree.</p>
+<p>In Random Forest Classifier, we use multiple decision tree with different sub-samples from the data set. This multiple decision trees leads to different outcomes. Random Forest Classifier combines result from all these DT and comes up with an outcomes which is a better generalization for the entire data set.</p>
 
 </div>
 </div>
